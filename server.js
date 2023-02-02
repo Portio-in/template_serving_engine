@@ -40,8 +40,8 @@ function generateKey(host, path) {
 // Wildcard route to handle all requests
 app.get("*", async (req, res) => {
     try{
-        // let host = req.get("host")
-        let host = "tanmoy.portio.in";
+        let host = req.get("host")
+        // let host = "tanmoy.portio.in";
         // generate key based on path and host combination
         const key = generateKey(host, req.path);
         // set content type
